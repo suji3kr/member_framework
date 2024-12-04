@@ -20,6 +20,20 @@
         select * from member_table where id=#{id}
     </select>
     
+    <delete id="delete" parameterType="Long">
+        delete from member_table where id = #{id}
+    </delete>
+    
+     <select id="findByMemberEmail" parameterType="String" resultType="member">
+        select id, memberEmail, memberPassword, memberName, memberAge, memberMobile
+        from member_table where memberEmail = #{loginEmail}
+    </select>
+    
+    <update id="update" parameterType="member">
+        update member_table set memberAge=#{memberAge},
+                                                           memberMobile=#{memberMobile}
+        where id=#{id}
+    </update>
 </mapper>
 
 <!-- 테이블 목록 넣는 폴더를 mapper에 따로 쓰고 

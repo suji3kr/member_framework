@@ -9,7 +9,7 @@
 <script>
 	const deleteMember = (id) => {
 		console.log(id);
-		location.href = "/member/delte?id="+ id;
+		location.href = "/member/delete?id="+ id;
 	}
 </script>
 <body>
